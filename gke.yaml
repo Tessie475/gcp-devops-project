@@ -14,9 +14,9 @@ spec:
     spec:
       containers:
       - name: gcp-devops-gke
-        image: "gcr.io/learning-397907/gcpdevops"
+        image: "gcr.io/$PROJECT_ID/gcpdevops"
         ports:
-        - containerPort: 5000  # Correct field name
+        - containerPort: 5000 
         env:
         - name: PORT
           value: "5000"
