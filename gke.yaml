@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata: 
+  name: gcp-devops-gke
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: gcp
+  template:
+    metadata:
+      labels:
+        app: gcp
+    spec:
+      containers:
+      - name: gcp-devops-gke
+        image: "$(MY_APP_IMAGE)"
+        ports: 
+        - containerPorts: 5000
+        env:
+            - name: MY_APP_IMAGE
+              valueFrom:
+                configMapKeyRef:
+                  name: my-app-config
+                  key: image
+            - name: PORT
+              value: "5000"
