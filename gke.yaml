@@ -1,6 +1,6 @@
 apiVersion: apps/v1
 kind: Deployment
-metadata: 
+metadata:
   name: gcp-devops-gke
 spec:
   replicas: 1
@@ -15,21 +15,21 @@ spec:
       containers:
       - name: gcp-devops-gke
         image: "gcr.io/learning-397907/gcpdevops"
-        ports: 
-        - containerPorts: 5000
+        ports:
+        - containerPort: 5000  # Correct field name
         env:
-            - name: PORT
-              value: "5000"
+        - name: PORT
+          value: "5000"
 ---
 apiVersion: apps/v1
 kind: Service
-metadata: 
+metadata:
   name: gcp-devops-gke-service
   namespace: "gcp-devops-prod"
   labels:
     app.kubernetes.io/managed-by: "gcp-cloud-build-deploy"
 spec:
-  ports: 
+  ports:
   - protocols: "TCP"
     port: 80
     targetPort: 5000
