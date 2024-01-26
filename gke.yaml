@@ -14,14 +14,9 @@ spec:
     spec:
       containers:
       - name: gcp-devops-gke
-        image: "$(MY_APP_IMAGE)"
+        image: "gcr.io/$PROJECT_ID/gcpdevops"
         ports: 
         - containerPorts: 5000
         env:
-            - name: MY_APP_IMAGE
-              valueFrom:
-                configMapKeyRef:
-                  name: my-app-config
-                  key: image
             - name: PORT
               value: "5000"
