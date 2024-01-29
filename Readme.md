@@ -15,10 +15,7 @@ This project establishes a CI/CD pipeline for deploying and updating Google Kube
 1. **GitHub Branching:**
    - Branches are created for different components of the project (e.g., Deployment, services, cloud build, etc.).
 
-2. **GitHub Actions:**
-   - Upon merging changes to the main branch, GitHub Actions initiates the CI/CD workflow.
-
-3. **Cloud Build:**
+2. **Cloud Build:**
    - The CI/CD pipeline is defined in the `cloud-build.yaml` file.
    - Cloud Build automatically builds a Docker image, pushes it to Google Container Registry, and deploys the application to the specified GKE cluster and namespace.
 
