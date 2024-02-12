@@ -1,6 +1,6 @@
 # GCP DevOps Project
 
-This project establishes a CI/CD pipeline for deploying and updating Google Kubernetes Engine (GKE) clusters on Google Cloud Platform (GCP). The pipeline is orchestrated through GitHub actions and Google Cloud Build.
+This project establishes a CI/CD pipeline for deploying and updating Google Kubernetes Engine (GKE) clusters on Google Cloud Platform (GCP). The pipeline is orchestrated through Google Cloud Build.
 
 ## Overview
 
